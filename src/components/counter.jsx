@@ -10,8 +10,12 @@ class Counter extends Component {
         this.setState({ value: this.state.value +1 })
     };
 
+    handleDelete = product =>{
+        this.setState({value: this.state.value -1})
+    };
+
     render() {      
-        console.log("props", this.props);  
+        //console.log("props", this.props);  
 
         return (
             <div>
@@ -20,6 +24,10 @@ class Counter extends Component {
                 <button 
                     onClick={ () => this.handleIncrement({ id : 1})} 
                     className="btn btn-secondary btn-sm">Increment
+                </button>
+                <button 
+                    onClick={() => this.handleDelete({id : 1})} 
+                    className="btn btn-danger btn-sm m-2">Delete
                 </button>            
             </div>
         );
